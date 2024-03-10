@@ -214,8 +214,8 @@ const changeCurrentPassword = asyncHandler(async (req, res) => {
         .json(new ApiResponse(200, {}, "Password changed successfully"))
 })
 
-const updateAccountDetails = asyncHandler(async(req, res) => {
-    const {fullName, email} = req.body
+const updateAccountDetails = asyncHandler(async (req, res) => {
+    const { fullName, email } = req.body
 
     if (!fullName || !email) {
         throw new ApiError(400, "All fields are required")
@@ -229,13 +229,13 @@ const updateAccountDetails = asyncHandler(async(req, res) => {
                 email: email
             }
         },
-        {new: true}
-        
+        { new: true }
+
     ).select("-password")
 
     return res
-    .status(200)
-    .json(new ApiResponse(200, user, "Account details updated successfully"))
+        .status(200)
+        .json(new ApiResponse(200, user, "Account details updated successfully"))
 });
 
 export {
@@ -244,6 +244,6 @@ export {
     logoutUser,
     refreshAccessToken,
     changeCurrentPassword,
-    updateAccountDetail
+    updateAccountDetails
 
 }
