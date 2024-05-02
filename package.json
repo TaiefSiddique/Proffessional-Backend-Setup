@@ -25,5 +25,4 @@
     "mongoose-aggregate-paginate-v2": "^1.0.6",
     "multer": "^1.4.5-lts.1"
   }
-  
 }
